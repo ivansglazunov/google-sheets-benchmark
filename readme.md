@@ -54,7 +54,7 @@ Looks for the old row with the result of each test for all fields except speed a
         async.each(
           results,
           function(result, next) {
-            bs.cycle(result);
+            bs.save(result, next);
           },
         );
       });

@@ -34,7 +34,7 @@ gsb.getSheet(
       async.each(
         results,
         function(result, next) {
-          bs.cycle(result);
+          bs.save(result, next);
         },
       );
     });

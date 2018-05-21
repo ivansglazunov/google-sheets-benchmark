@@ -49,8 +49,7 @@ exports.BenchmarksSheet.prototype.generateQuery = function(result) {
 exports.BenchmarksSheet.prototype.handleRows = function(rows, result, callback) {
   if (this.config.allowUpdate && rows.length) {
     _.extend(rows[0], result);
-    rows[0].save();
-    this.sheet.bulkUpdateCells(rows, function(error) {
+    rows[0].save(function(error) {
       if (callback) callback(error);
     });
   } else {
@@ -60,7 +59,7 @@ exports.BenchmarksSheet.prototype.handleRows = function(rows, result, callback) 
   }
 };
 
-exports.BenchmarksSheet.prototype.cycle = function(result, callback) {
+exports.BenchmarksSheet.prototype.save = function(result, callback) {
   var bs = this;
   this.sheet.getRows(
     {

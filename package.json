@@ -1,6 +1,6 @@
 {
   "name": "google-sheets-benchmark",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Save benchmark.js's output into google spreadsheet with tags, variables and platform info.",
   "license": "MIT",
   "main": "main.js",
